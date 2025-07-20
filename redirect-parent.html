@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const target = params.get('page');
+        const redirects = {
+            "game-over": "game-over.html",
+            "infected-dungeon": "infected-dungeon.html",
+            "shallow-tunnels": "shallow-tunnels.html"
+        }
+
+        if (target && target in redirects) {
+            window.parent.location.href = redirects[target];
+        } else {
+            window.location.href = "redirect-error.html";
+        }
+    };
+  </script>
+</head>
+<body>
+  Redirecting parent page...
+</body>
+</html>
