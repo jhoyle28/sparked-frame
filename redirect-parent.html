@@ -8,14 +8,14 @@
         const params = new URLSearchParams(window.location.search);
         const target = params.get('page');
         const redirects = {
-            "game-over": "game-over-signifier",
-            "infected-dungeon": "infect-dungeon-signifier",
-            "shallow-tunnels": "shallow-tunnels-signifier",
-            "earthworm-den": "earthworm-den-signifier"
+            "game-over": "game-over.html",
+            "infected-dungeon": "cutscene-segment.html?textset=1",
+            "shallow-tunnels": "cutscene-segment.html?textset=2",
+            "earthworm-den": "cutscene-segment.html?textset=3"
         }
 
         if (target && target in redirects) {
-            window.location.href = "https://www.youtube.com";
+            window.parent.location.href = redirects[target];
         } else {
             window.location.href = "redirect-error.html";
         }
