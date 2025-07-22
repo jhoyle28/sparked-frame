@@ -15,7 +15,7 @@
         }
 
         if (target && target in redirects) {
-            windowlocation.href = redirects[target];
+            window.location.href = redirects[target];
         } else {
             window.location.href = "redirect-error.html";
         }
@@ -23,6 +23,6 @@
   </script>
 </head>
 <body>
-  Redirecting parent page...
+  Redirecting...
 </body>
 </html>
